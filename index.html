@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alireza Ultimate Neon OS V2</title>
+  <meta name="description" content="داشبورد فوق گرافیکی علیرضا با ساعت ایران، تاریخ شمسی و بیش از ۶۰ ابزار واقعی با HTML CSS JavaScript." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-orb"></div>
+    <strong>ALIREZA NEON OS V2</strong>
+    <span>Loading ultimate cyber dashboard...</span>
+  </div>
+
+  <div id="scrollProgress"></div>
+  <div id="cursorGlow"></div>
+  <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="noise"></div>
+  <div class="aurora aurora-a"></div>
+  <div class="aurora aurora-b"></div>
+  <div class="aurora aurora-c"></div>
+
+  <aside class="side-dock glass">
+    <a href="#home">خانه</a>
+    <a href="#live">زنده</a>
+    <a href="#tools">ابزارها</a>
+    <button id="openCommand" type="button">Ctrl K</button>
+  </aside>
+
+  <header id="home" class="hero glass cyber-border">
+    <nav class="topbar">
+      <div class="brand">
+        <span class="brand-core"></span>
+        <div>
+          <strong>ALIREZA ULTIMATE NEON OS</strong>
+          <small>ساخته شده توسط alireza namdari</small>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button class="chip" id="themeBtn" type="button">تغییر تم ✨</button>
+        <button class="chip" id="syncTimeBtn" type="button">Sync Iran Time 🇮🇷</button>
+        <button class="chip" id="panicBtn" type="button">Turbo FX ⚡</button>
+      </div>
+    </nav>
+
+    <section class="hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow">HTML • CSS • JAVASCRIPT • CYBERPUNK</p>
+        <h1>نسخه ۱۰۰٪ گرافیکی داشبورد علیرضا</h1>
+        <p class="hero-text">
+          یک سایت تک‌صفحه‌ای فوق گرافیکی با افکت‌های نئونی، ساعت دقیق ایران، تاریخ شمسی، ماشین‌حساب حرفه‌ای و بیش از ۶۰ ابزار واقعی؛ همه داخل همین پروژه بدون فریم‌ورک.
+        </p>
+        <div class="hero-actions">
+          <a class="main-btn" href="#tools">ورود به مرکز ابزارها</a>
+          <button class="ghost-btn" id="randomToolBtn" type="button">ابزار شانسی 🎲</button>
+        </div>
+        <div class="feature-marquee" aria-label="قابلیت‌ها">
+          <div><span>⏰ ساعت دقیق ایران</span>
+<span>📅 تاریخ شمسی ایران</span>
+<span>🗓️ تقویم سه‌گانه</span>
+<span>🌍 ساعت شهرهای جهان</span>
+<span>🌱 شمارش تا نوروز</span>
+<span>🚀 شمارش معکوس دلخواه</span>
+<span>🔔 آلارم مرورگری</span>
+<span>🎯 تایمر تمرکز</span>
+<span>⏱️ کرنومتر حرفه‌ای</span>
+<span>🔁 مبدل زمان</span>
+<span>🧮 ماشین‌حساب حرفه‌ای</span>
+<span>🧠 ماشین‌حساب علمی کوچک</span>
+<span>٪ درصدگیر سریع</span>
+<span>🏷️ محاسبه تخفیف</span>
+<span>🎂 محاسبه سن</span>
+<span>⚖️ محاسبه BMI</span></div>
+          <div><span>⏰ ساعت دقیق ایران</span>
+<span>📅 تاریخ شمسی ایران</span>
+<span>🗓️ تقویم سه‌گانه</span>
+<span>🌍 ساعت شهرهای جهان</span>
+<span>🌱 شمارش تا نوروز</span>
+<span>🚀 شمارش معکوس دلخواه</span>
+<span>🔔 آلارم مرورگری</span>
+<span>🎯 تایمر تمرکز</span>
+<span>⏱️ کرنومتر حرفه‌ای</span>
+<span>🔁 مبدل زمان</span>
+<span>🧮 ماشین‌حساب حرفه‌ای</span>
+<span>🧠 ماشین‌حساب علمی کوچک</span>
+<span>٪ درصدگیر سریع</span>
+<span>🏷️ محاسبه تخفیف</span>
+<span>🎂 محاسبه سن</span>
+<span>⚖️ محاسبه BMI</span></div>
+        </div>
+      </div>
+
+      <div class="holo-panel">
+        <div class="holo-ring">
+          <div class="analog-clock">
+            <span class="clock-dot"></span>
+            <span class="hand hour" id="hourHand"></span>
+            <span class="hand minute" id="minuteHand"></span>
+            <span class="hand second" id="secondHand"></span>
+            <span class="mark m12">۱۲</span>
+            <span class="mark m3">۳</span>
+            <span class="mark m6">۶</span>
+            <span class="mark m9">۹</span>
+          </div>
+        </div>
+        <div class="time-box">
+          <span>زمان ایران</span>
+          <strong id="digitalTime">--:--:--</strong>
+          <p id="iranDate">در حال دریافت تاریخ...</p>
+          <small id="timeStatus">اتصال به API زمان...</small>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="live" class="live-grid">
+      <article class="live-card glass">
+        <span>API ساعت</span>
+        <strong id="apiState">در حال اتصال</strong>
+      </article>
+      <article class="live-card glass">
+        <span>قابلیت‌ها</span>
+        <strong>63 ابزار</strong>
+      </article>
+      <article class="live-card glass">
+        <span>ذخیره محلی</span>
+        <strong>LocalStorage</strong>
+      </article>
+      <article class="live-card glass">
+        <span>گرافیک</span>
+        <strong>Cyber Neon</strong>
+      </article>
+      <article class="live-card glass wide-live">
+        <span>وضعیت زنده سیستم</span>
+        <strong id="liveSystem">در حال خواندن...</strong>
+      </article>
+    </section>
+
+    <section class="section-head">
+      <p class="eyebrow">ULTIMATE TOOL CENTER</p>
+      <h2>۵۰+ قابلیت اضافه‌شده با گرافیک سنگین‌تر</h2>
+      <p>
+        جستجو کن، دسته‌بندی عوض کن یا با <kbd>Ctrl</kbd> + <kbd>K</kbd> منوی فرمان را باز کن.
+      </p>
+    </section>
+
+    <section id="tools" class="control-panel glass">
+      <input id="toolSearch" type="search" placeholder="جستجوی ابزار... مثلا: QR، باتری، متن، اهم" />
+      <div id="categoryTabs" class="tabs"></div>
+    </section>
+
+    <section id="featureGrid" class="feature-grid"></section>
+  </main>
+
+  <footer class="footer glass">
+    <strong>ساخته شده توسط alireza namdari</strong>
+    <span>Ultimate V2 • 60+ widgets • Zero framework • Neon Cyber UI</span>
+  </footer>
+
+  <div id="commandPalette" class="command-palette" aria-hidden="true">
+    <div class="command-box glass">
+      <input id="commandInput" placeholder="اسم ابزار را بنویس..." />
+      <div id="commandResults"></div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
